@@ -937,6 +937,16 @@ function switchTab(name) {
 }
 
 function formatLast6(raw) {
+  // Wenn es eine URL mit /qr/ enthält, extrahiere den Teil nach /qr/
+  if (raw.includes('/qr/')) {
+    const match = raw.match(/\/qr\/(.+)$/);
+    return match ? match[1] : raw.slice(-6);
+  }
+  // Für manuelle Input: wenn 6+ Zeichen, formatiere zu abc-123
+  if (raw.length >= 6) {
+    return raw.slice(0, 3) + '-' + raw.slice(3, 6);
+  }
+  // Sonst nimm die letzten 6 Zeichen
   return raw.slice(-6);
 }
 
