@@ -937,9 +937,7 @@ function switchTab(name) {
 }
 
 function formatLast6(raw) {
-  const digits = raw.replace(/\D/g, '');
-  const last6 = digits.slice(-6).padStart(6, '0');
-  return last6.substring(0, 3) + '-' + last6.substring(3, 6);
+  return raw.slice(-6);
 }
 
 async function startScanner() {
@@ -1065,6 +1063,7 @@ function renderList() {
     <div class="scan-item">
       <div style="flex:1">
         <div class="scan-code">${formatLast6(scan.code)}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;word-break:break-all;font-family:var(--mono)">${scan.code}</div>
         <div style="font-size:12px;color:var(--muted);margin-top:4px">${scan.date} • ${scan.time}</div>
       </div>
       <button class="copy-btn" onclick="copyScan(${idx})">Copy</button>
