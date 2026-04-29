@@ -2,7 +2,7 @@
   "name": "ScanVault - QR Code Scanner",
   "short_name": "ScanVault",
   "description": "Sichere QR-Code-Scanner und Verwaltung mit lokalem Speicher",
-  "start_url": "/",
+  "start_url": "/scanvault/"
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
